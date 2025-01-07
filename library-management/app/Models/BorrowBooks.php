@@ -9,6 +9,11 @@ class BorrowBooks extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'return_date' => 'datetime',  // Cast return_date to Carbon instance automatically
+        'borrow_date' => 'datetime', 
+    ];
+
     protected $dates = ['borrow_date', 'return_date'];
 
     // Define the table name if it's different from the default plural

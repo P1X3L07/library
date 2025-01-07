@@ -13,7 +13,8 @@ Route::get('/books/search', [BookController::class, 'search'])->name('books.sear
 
 // Public Routes for Borrowing and Returning Books (accessible by anyone)
 Route::post('/borrow/{id}', [BorrowController::class, 'borrow'])->name('borrow.book');
-Route::post('/return/{id}', [BorrowController::class, 'return'])->name('return.book');
+Route::post('/return/{id}', [BorrowController::class, 'returnBook'])->name('return.book');
+Route::post('/return-book/{bookId}', [BorrowController::class, 'returnBook'])->name('return.book');
 
 // Public Route for Viewing Borrowed Books (accessible by anyone)
 Route::get('/borrowed-books', [BorrowController::class, 'showBorrowedBooks'])->name('borrow.books');

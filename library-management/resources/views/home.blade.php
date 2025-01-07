@@ -38,7 +38,7 @@
                         <td>{{ $book->author }}</td>
                         <td>{{ $book->genre }}</td>
                         <td>
-                            <form action="{{ url('/borrow', ['id' => $book->id]) }}" method="POST">
+                            <form action="{{ route('borrow.book', ['id' => $book->id]) }}" method="POST">
                                 @csrf
                                 <button type="submit">Borrow</button>
                             </form>
